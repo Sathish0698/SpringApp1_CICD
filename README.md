@@ -6,4 +6,5 @@
 ![image](https://user-images.githubusercontent.com/69889600/226805372-77f696e3-ad90-45a6-8a71-42fcc5ce821b.png)
 
 # Step 1 : Setup Jenkins Server
+#### Launch the EC2 instance and install JAVA and JENKINS TO IT
 
