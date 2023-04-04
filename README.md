@@ -12,13 +12,46 @@
  
  To Install the Maven and Docker Follow the below commands. I used Ubuntu instance for Jenkins.
  
- # Install Maven in Jenkins
-sudo apt-get install maven -y
-## Update packages
-sudo apt-get update
-## Install Docker
-sudo apt-get install docker.io -y
-## Add Jenkins user to Docker group
-sudo usermod -a -G docker jenkins
+Install Maven in Jenkins
+ ```sh
+ sudo apt-get install maven -y
+  ```
 
+Update packages
+ ```sh
+sudo apt-get update
+ ```
+Install Docker
+ ```sh
+sudo apt-get install docker.io -y
+ ```
+Add Jenkins user to Docker group
+ ```sh
+sudo usermod -a -G docker jenkins
+ ```
+
+Set JAVA_HOME and MAVEN_HOME using the below commands. To set the variable permanently, you should add it to the .bashrc file in your home directory.
+```sh
+echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> ~/.bashrc
+echo "export MAVEN_HOME=/usr/share/maven" >> ~/.bashrc
+```
+
+# Next we need to Install the following Plugins in jenkins.
+When we open Jenkins in first time, install suggested plugins by jenkins.
+
+    Github
+
+    Pipeline maven integration
+
+    Pipeline stage view
+
+    SSH Agent
+    
+# Configure Java and Maven in Jenkins
+
+Go to **Manage Jenkins**, then select **Global Tool Configuratiom**, then scroll down a little bit, add JDK and Maven path hat we exported in the above steps as shown below
+Uncheck the **Install automatically** checkbox, Give Name and Path and click Save.
+    
+
+ 
 
