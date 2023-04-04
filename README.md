@@ -30,7 +30,7 @@ Add Jenkins user to Docker group
 sudo usermod -a -G docker jenkins
  ```
 
-Set JAVA_HOME and MAVEN_HOME using the below commands. To set the variable permanently, you should add it to the .bashrc file in your home directory.
+Set JAVA_HOME and MAVEN_HOME using the below commands. To set the variable permanently, you should add it to the `.bashrc` file in your home directory.
 ```sh
 echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> ~/.bashrc
 echo "export MAVEN_HOME=/usr/share/maven" >> ~/.bashrc
