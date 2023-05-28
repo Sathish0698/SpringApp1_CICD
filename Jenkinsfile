@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/Sathish0698/SpringApp1_CICD'
+        git branch: 'master', url: 'https://github.com/Sathish0698/SpringApp1_CICD'
 
       }
     }
