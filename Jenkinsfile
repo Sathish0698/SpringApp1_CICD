@@ -3,7 +3,7 @@ pipeline {
 	
   environment {
     DOCKERHUB_CREDENTIALS = credentials('docker-hub-cred')
-    REMOTE_SERVER = '18.208.106.44'
+    REMOTE_SERVER = '3.85.17.61'
     REMOTE_USER = 'ec2-user' 	  	  
   }
 	
@@ -61,7 +61,7 @@ pipeline {
 	  
    // Push image to DockerHub registry
 	  
-    stage('Push Image to dockerHUb') {
+    stage('Push Image to dockerHub') {
       steps {
         sh 'docker push sathish98docker/javawebapp:latest'
       }
@@ -80,7 +80,7 @@ pipeline {
         script {
           sshagent(credentials: ['awscred']) {
           sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_SERVER} 'docker stop javaApp || true && docker rm javaApp || true'"
-	        sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_SERVER} 'docker pull sathish98docker/javawebapp'"
+	  sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_SERVER} 'docker pull sathish98docker/javawebapp'"
           sh "ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_SERVER} 'docker run --name javaApp -d -p 8081:8081 sathish98docker/javawebapp'"
           }
         }
